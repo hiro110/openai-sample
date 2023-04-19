@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: langchain_app
+    env_file: 
+      - ./var.env
+    tty: true
+    volumes:
+      - ./src:/var/app/langchain
+    environment:
+      TZ: 'Asia/Tokyo'
